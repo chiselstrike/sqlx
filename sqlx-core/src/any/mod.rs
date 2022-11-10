@@ -16,6 +16,7 @@ pub(crate) mod column;
 mod connection;
 mod database;
 mod error;
+mod json;
 mod kind;
 mod options;
 mod query_result;
