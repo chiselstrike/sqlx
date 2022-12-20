@@ -110,6 +110,8 @@ impl FromStr for SqliteConnectOptions {
 
                     "vfs" => options.vfs = Some(Cow::Owned(value.into_owned())),
 
+                    "wal" => options.wal = Some(Cow::Owned(value.into_owned())),
+
                     _ => {
                         return Err(Error::Configuration(
                             format!(

@@ -77,6 +77,10 @@ impl EstablishParams {
             query_params.push(format!("vfs={}", vfs))
         }
 
+        if let Some(wal) = &options.wal {
+            query_params.push(format!("wal={}", wal))
+        }
+
         if !query_params.is_empty() {
             filename = format!("file:{}?{}", filename, query_params.join("&"));
             flags |= libsqlite3_sys::SQLITE_OPEN_URI;
